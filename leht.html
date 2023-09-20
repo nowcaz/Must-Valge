@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hele ja Tume Värviskeema Vahetaja</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body.dark {
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="dark">
+    <div class="container">
+        <h1>Tere tulemast</h1>
+        <p>Vajuta nupule</p>
+        <button id="themeToggle" class="btn btn-dark">Vaheta Teema</button>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const themeToggleBtn = document.getElementById('themeToggle');
+
+            if (themeToggleBtn.classList.contains('btn-dark')) {
+                themeToggleBtn.classList.remove('btn-dark');
+                themeToggleBtn.classList.add('btn-light');
+                themeToggleBtn.textContent = 'Hele';
+                body.classList.add('dark');
+            } else {
+                themeToggleBtn.classList.remove('btn-light');
+                themeToggleBtn.classList.add('btn-dark');
+                themeToggleBtn.textContent = 'Tume';
+                body.classList.remove('dark');
+            }
+        }
+
+        document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
